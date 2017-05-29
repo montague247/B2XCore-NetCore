@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B2XCore.Types-NetCore", "Libs-B2XCore\B2XCore.Types-NetCore\B2XCore.Types-NetCore.csproj", "{51C2D751-61D1-4A69-812C-9D3441D6A3D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51C2D751-61D1-4A69-812C-9D3441D6A3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51C2D751-61D1-4A69-812C-9D3441D6A3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51C2D751-61D1-4A69-812C-9D3441D6A3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51C2D751-61D1-4A69-812C-9D3441D6A3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.StandardHeader = $2
+		$2.Text = @${FileNameWithoutExtension}\n${Date} ${Time}\n${AuthorName}\n\n Copyright ${Year}  ${CopyrightHolder}\n\n   Licensed under the Apache License, Version 2.0 (the "License");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an "AS IS" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.
+		$0.VersionControlPolicy = $3
+	EndGlobalSection
+EndGlobal

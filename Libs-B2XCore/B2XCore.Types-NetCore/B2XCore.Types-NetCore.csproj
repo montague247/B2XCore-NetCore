@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <RootNamespace>B2XCore</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\B2XCore.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_4;NETCORE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\netstandard1.4\B2XCore.Types-NetCore.xml</DocumentationFile>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>Latest</LangVersion>
+    <DebugType></DebugType>
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_4;NETCORE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Xml" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
+  </ItemGroup>
+</Project>
