@@ -1,1 +1,3 @@
 # B2XCore-NetCore
+At the moment I try to migrate all the code to .NET Core.
+Stay tuned...
