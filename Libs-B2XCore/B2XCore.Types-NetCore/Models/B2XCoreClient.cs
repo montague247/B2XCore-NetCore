@@ -1,0 +1,1 @@
+../../../../B2XCore/Libs/B2XCore.Types/Models/B2XCoreClient.cs
