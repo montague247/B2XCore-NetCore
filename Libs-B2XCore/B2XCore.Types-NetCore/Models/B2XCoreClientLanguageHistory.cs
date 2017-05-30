@@ -1,13 +1,12 @@
-using System;
 using System.Runtime.Serialization;
 
 namespace B2XCore.Models
 {
 	/// <summary>
-	/// Entry of table B2XCoreClientHistory.
+	/// Entry of table B2XCoreClientLanguageHistory.
 	/// </summary>
 	[DataContract(Namespace = Constants.CoreModelTypeNamespace)]
-	public partial class B2XCoreClientHistory : ChangeHistory
+	public partial class B2XCoreClientLanguageHistory : ChangeHistory
     {
 		/// <summary>
 		/// Gets or sets the ClientID.
@@ -19,30 +18,21 @@ namespace B2XCore.Models
 		public int ClientId { get; set; }
 
 		/// <summary>
-		/// Gets or sets the UniqueID.
+		/// Gets or sets the LanguageID.
 		/// </summary>
 		/// <value>
-		/// The UniqueID.
+		/// The LanguageID.
 		/// </value>
 		[DataMember]
-		public Guid UniqueKey { get; set; }
+		public int LanguageId { get; set; }
 
 		/// <summary>
-		/// Gets or sets the Name.
+		/// Gets or sets the IsEnabled.
 		/// </summary>
 		/// <value>
-		/// The Name.
+		/// The IsEnabled.
 		/// </value>
 		[DataMember]
-		public string Name { get; set; }
-
-		/// <summary>
-		/// Gets or sets the ApplicationID.
-		/// </summary>
-		/// <value>
-		/// The ApplicationID.
-		/// </value>
-		[DataMember]
-		public int ApplicationId { get; set; }
+		public bool IsEnabled { get; set; }
     }
 }
