@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F9CB823-7F56-4BA4-B23F-C1AE98054213}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>B2XCore</RootNamespace>
+    <AssemblyName>B2XCore.Types</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\B2XCore.Types.XML</DocumentationFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\B2XCore\B2XCore.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>B2XCore.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-CA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug-CA\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\B2XCore.Types.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\B2XCore\B2XCore.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConfigurationDescriptionAttribute.cs" />
+    <Compile Include="Configuration\ConfigurationDisplayNameAttribute.cs" />
+    <Compile Include="Configuration\FilterSelection.cs" />
+    <Compile Include="Configuration\FilterEntry.cs" />
+    <Compile Include="Configuration\ColumnMapping.cs" />
+    <Compile Include="Configuration\ImportMapping.cs" />
+    <Compile Include="Configuration\EditorColumnMapping.cs" />
+    <Compile Include="Configuration\ModifiedUtcColumnMapping.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Data\B2XCore.dependentquery.cs" />
+    <Compile Include="Data\B2XCore.designer.cs">
+      <DependentUpon>B2XCore.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\B2XCore.historiography.cs" />
+    <Compile Include="Data\B2XCoreHistory.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>B2XCoreHistory.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IFileImport.cs" />
+    <Compile Include="Data\IHistoriography.cs" />
+    <Compile Include="Data\AuthenticationType.cs" />
+    <Compile Include="Data\KeyValue.cs" />
+    <Compile Include="Data\KeyValuePair.cs" />
+    <Compile Include="Data\IDomainAccessor.cs" />
+    <Compile Include="Data\ITableImport.cs" />
+    <Compile Include="Data\ITableUpdate.cs" />
+    <Compile Include="Data\KeyValuePairHierarchy.cs" />
+    <Compile Include="Excel\ColumnData.cs" />
+    <Compile Include="Excel\SubTotalType.cs" />
+    <Compile Include="ImplementableAttribute.cs" />
+    <Compile Include="Configuration\CompareFilter.cs" />
+    <Compile Include="Configuration\CompareType.cs" />
+    <Compile Include="Configuration\CombineType.cs" />
+    <Compile Include="Configuration\CombineFilter.cs" />
+    <Compile Include="IProcessingExecutor.cs" />
+    <Compile Include="IProcessingRequestor.cs" />
+    <Compile Include="IReport.cs" />
+    <Compile Include="IProcessingStatus.cs" />
+    <Compile Include="ProcessingStatusType.cs" />
+    <Compile Include="ProcessingStatus.cs" />
+    <Compile Include="Models\B2XCoreApplication.cs" />
+    <Compile Include="Models\B2XCoreApplicationHistory.cs" />
+    <Compile Include="Models\B2XCoreClient.cs" />
+    <Compile Include="Models\B2XCoreClientHistory.cs" />
+    <Compile Include="Models\B2XCoreClientLanguage.cs" />
+    <Compile Include="Models\B2XCoreClientLanguageHistory.cs" />
+    <Compile Include="Models\B2XCoreDomain.cs" />
+    <Compile Include="Models\B2XCoreDomainHistory.cs" />
+    <Compile Include="Models\B2XCoreDomainResource.cs" />
+    <Compile Include="Models\B2XCoreDomainResourceHistory.cs" />
+    <Compile Include="Models\B2XCoreGroup.cs" />
+    <Compile Include="Models\B2XCoreGroupHistory.cs" />
+    <Compile Include="Models\B2XCoreImplementation.cs" />
+    <Compile Include="Models\B2XCoreImplementationHistory.cs" />
+    <Compile Include="Models\B2XCoreInstance.cs" />
+    <Compile Include="Models\B2XCoreInstanceActivity.cs" />
+    <Compile Include="Models\B2XCoreInstanceActivityHistory.cs" />
+    <Compile Include="Models\B2XCoreInstanceHistory.cs" />
+    <Compile Include="Models\B2XCoreLanguage.cs" />
+    <Compile Include="Models\B2XCoreLanguageHistory.cs" />
+    <Compile Include="Models\B2XCoreMachine.cs" />
+    <Compile Include="Models\B2XCoreMachineHistory.cs" />
+    <Compile Include="Models\B2XCoreResource.cs" />
+    <Compile Include="Models\B2XCoreResourceHistory.cs" />
+    <Compile Include="Models\B2XCoreResourceResourceValue.cs" />
+    <Compile Include="Models\B2XCoreResourceResourceValueHistory.cs" />
+    <Compile Include="Models\B2XCoreResourceValue.cs" />
+    <Compile Include="Models\B2XCoreResourceValueHistory.cs" />
+    <Compile Include="Models\B2XCoreSetting.cs" />
+    <Compile Include="Models\B2XCoreSettingDefinition.cs" />
+    <Compile Include="Models\B2XCoreSettingDefinitionHistory.cs" />
+    <Compile Include="Models\B2XCoreSettingHistory.cs" />
+    <Compile Include="Models\B2XCoreUser.cs" />
+    <Compile Include="Models\B2XCoreUserDomainResource.cs" />
+    <Compile Include="Models\B2XCoreUserDomainResourceHistory.cs" />
+    <Compile Include="Models\B2XCoreUserGroup.cs" />
+    <Compile Include="Models\B2XCoreUserGroupHistory.cs" />
+    <Compile Include="Models\B2XCoreUserHistory.cs" />
+    <Compile Include="Models\B2XCoreUserProperty.cs" />
+    <Compile Include="Models\B2XCoreUserPropertyDefinition.cs" />
+    <Compile Include="Models\B2XCoreUserPropertyDefinitionHistory.cs" />
+    <Compile Include="Models\B2XCoreUserPropertyHistory.cs" />
+    <Compile Include="Models\ChangeTracking.cs" />
+    <Compile Include="Models\ChangeHistory.cs" />
+    <Compile Include="Models\B2XCoreTimeZone.cs" />
+    <Compile Include="Models\B2XCoreTimeZoneHistory.cs" />
+    <Compile Include="Models\Tracking.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyOrderAttribute.cs" />
+    <Compile Include="PropertyOrderPair.cs" />
+    <Compile Include="PropertySorter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="B2XCore.snk" />
+    <None Include="B2XCore.Types.csproj.b2xdevconfig" />
+    <None Include="Data\B2XCore.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>B2XCore.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\B2XCoreHistory.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>B2XCoreHistory.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\B2XCore.configuration.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\B2XCoreHistory.configuration.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\B2XCore.dbml.layout">
+      <DependentUpon>B2XCore.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\B2XCoreHistory.dbml.layout">
+      <DependentUpon>B2XCoreHistory.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>if not exist "$(TargetDir)..\Configuration" mkdir "$(TargetDir)..\Configuration"
+xcopy "$(SolutionDir)Apps\Configuration" "$(TargetDir)..\Configuration" /D /Y</PreBuildEvent>
+  </PropertyGroup>
+  <Target Name="GenerateSerializationAssembliesForAllTypes" DependsOnTargets="AssignTargetPaths;Compile;ResolveKeySource" Inputs="$(MSBuildAllProjects);@(IntermediateAssembly)" Outputs="$(OutputPath)$(_SGenDllName)">
+    <SGen BuildAssemblyName="$(TargetFileName)" BuildAssemblyPath="$(OutputPath)" References="@(ReferencePath)" ShouldGenerateSerializer="true" UseProxyTypes="false" KeyContainer="$(KeyContainerName)" KeyFile="$(KeyOriginatorFile)" DelaySign="$(DelaySign)" ToolPath="$(SGenToolPath)">
+      <Output TaskParameter="SerializationAssembly" ItemName="SerializationAssembly" />
+    </SGen>
+  </Target>
+  <Target Name="AfterBuild" DependsOnTargets="GenerateSerializationAssembliesForAllTypes">
+  </Target>
+</Project>

@@ -9,40 +9,36 @@ namespace B2XCore.Models
 	[DataContract(Namespace = Constants.CoreModelTypeNamespace)]
 	public partial class B2XCoreClientHistory : ChangeHistory
     {
-		/// <summary>
-		/// Gets or sets the ClientID.
-		/// </summary>
-		/// <value>
-		/// The ClientID.
-		/// </value>
-		[DataMember]
-		public int ClientId { get; set; }
+        /// <summary>
+        /// Gets or sets the ClientID.
+        /// </summary>
+        /// <value>
+        /// The ClientID.
+        /// </value>
+        public int ClientId { get; set; }
 
-		/// <summary>
-		/// Gets or sets the UniqueID.
-		/// </summary>
-		/// <value>
-		/// The UniqueID.
-		/// </value>
-		[DataMember]
-		public Guid UniqueKey { get; set; }
+        /// <summary>
+        /// Gets or sets the UniqueID.
+        /// </summary>
+        /// <value>
+        /// The UniqueID.
+        /// </value>
+        public Guid UniqueKey { get; set; }
 
-		/// <summary>
-		/// Gets or sets the Name.
-		/// </summary>
-		/// <value>
-		/// The Name.
-		/// </value>
-		[DataMember]
-		public string Name { get; set; }
+        /// <summary>
+        /// Gets or sets the Name.
+        /// </summary>
+        /// <value>
+        /// The Name.
+        /// </value>
+        public string Name { get; set; }
 
-		/// <summary>
-		/// Gets or sets the ApplicationID.
-		/// </summary>
-		/// <value>
-		/// The ApplicationID.
-		/// </value>
-		[DataMember]
-		public int ApplicationId { get; set; }
+        /// <summary>
+        /// Gets or sets the ApplicationID.
+        /// </summary>
+        /// <value>
+        /// The ApplicationID.
+        /// </value>
+        public int ApplicationId { get; set; }
     }
 }

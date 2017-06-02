@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="COPAS_Core" Class="B2XCoreDataContext" Modifier="Sealed" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.tblB2XCoreApplication" Member="B2XCoreApplications">
+    <Type Name="B2XCoreApplication">
+      <Column Name="ApplicationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="UniqueID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" UpdateCheck="Always" IsVersion="true" />
+      <Association Name="B2XCoreApplication_B2XCoreClient" Member="B2XCoreClients" ThisKey="ApplicationID" OtherKey="ApplicationID" Type="B2XCoreClient" />
+      <Association Name="B2XCoreApplication_B2XCoreResource" Member="B2XCoreResources" ThisKey="ApplicationID" OtherKey="ApplicationID" Type="B2XCoreResource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreClient" Member="B2XCoreClients">
+    <Type Name="B2XCoreClient">
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UniqueID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreClient_B2XCoreClientLanguage" Member="B2XCoreClientLanguages" ThisKey="ClientID" OtherKey="ClientID" Type="B2XCoreClientLanguage" />
+      <Association Name="B2XCoreClient_B2XCoreResourceResourceValue" Member="B2XCoreResourceResourceValues" ThisKey="ClientID" OtherKey="ClientID" Type="B2XCoreResourceResourceValue" />
+      <Association Name="B2XCoreClient_B2XCoreSetting" Member="B2XCoreSettings" ThisKey="ClientID" OtherKey="ClientID" Type="B2XCoreSetting" />
+      <Association Name="B2XCoreApplication_B2XCoreClient" Member="B2XCoreApplications" ThisKey="ApplicationID" OtherKey="ApplicationID" Type="B2XCoreApplication" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreClientLanguage" Member="B2XCoreClientLanguages">
+    <Type Name="B2XCoreClientLanguage">
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreClient_B2XCoreClientLanguage" Member="B2XCoreClients" ThisKey="ClientID" OtherKey="ClientID" Type="B2XCoreClient" IsForeignKey="true" />
+      <Association Name="B2XCoreLanguage_B2XCoreClientLanguage" Member="B2XCoreLanguages" ThisKey="LanguageID" OtherKey="LanguageID" Type="B2XCoreLanguage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreDomain" Member="B2XCoreDomains">
+    <Type Name="B2XCoreDomain">
+      <Column Name="DomainID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImplementationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AuthGroup" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Suffix" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="B2XCoreImplementation_B2XCoreDomain" Member="B2XCoreImplementations" ThisKey="ImplementationID" OtherKey="ImplementationID" Type="B2XCoreImplementation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreDomainResource" Member="B2XCoreDomainResources">
+    <Type Name="B2XCoreDomainResource">
+      <Column Name="DomainResourceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DomainID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreDomainResource_B2XCoreUserDomainResource" Member="B2XCoreUserDomainResources" ThisKey="DomainResourceID" OtherKey="DomainResourceID" Type="B2XCoreUserDomainResource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreGroup" Member="B2XCoreGroups">
+    <Type Name="B2XCoreGroup">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreGroup_B2XCoreUserGroup" Member="B2XCoreUserGroups" ThisKey="GroupID" OtherKey="GroupID" Type="B2XCoreUserGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreImplementation" Member="B2XCoreImplementations">
+    <Type Name="B2XCoreImplementation">
+      <Column Name="ImplementationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="InterfaceName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreImplementation_B2XCoreDomain" Member="B2XCoreDomains" ThisKey="ImplementationID" OtherKey="ImplementationID" Type="B2XCoreDomain" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreInstance" Member="B2XCoreInstances">
+    <Type Name="B2XCoreInstance">
+      <Column Name="InstanceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UniqueID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="InstanceName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreInstance_B2XCoreInstanceActivity" Member="B2XCoreInstanceActivities" ThisKey="InstanceID" OtherKey="InstanceID" Type="B2XCoreInstanceActivity" />
+      <Association Name="B2XCoreInstance_B2XCoreSetting" Member="B2XCoreSettings" ThisKey="InstanceID" OtherKey="InstanceID" Type="B2XCoreSetting" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreInstanceActivity" Member="B2XCoreInstanceActivities">
+    <Type Name="B2XCoreInstanceActivity">
+      <Column Name="InstanceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MachineID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProcessID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UniqueID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StartDateUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDateUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastIsAliveUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientIP" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreInstance_B2XCoreInstanceActivity" Member="B2XCoreInstances" ThisKey="InstanceID" OtherKey="InstanceID" Type="B2XCoreInstance" IsForeignKey="true" />
+      <Association Name="B2XCoreMachine_B2XCoreInstanceActivity" Member="B2XCoreMachines" ThisKey="MachineID" OtherKey="MachineID" Type="B2XCoreMachine" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreLanguage" Member="B2XCoreLanguages">
+    <Type Name="B2XCoreLanguage">
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="EnglishName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NativeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IetfLanguageTag" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ThreeLetterISOLanguageName" Type="System.String" DbType="NChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ThreeLetterWindowsLanguageName" Type="System.String" DbType="NChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="TwoLetterISOLanguageName" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreLanguage_B2XCoreClientLanguage" Member="B2XCoreClientLanguages" ThisKey="LanguageID" OtherKey="LanguageID" Type="B2XCoreClientLanguage" />
+      <Association Name="B2XCoreLanguage_B2XCoreResourceResourceValue" Member="B2XCoreResourceResourceValues" ThisKey="LanguageID" OtherKey="LanguageID" Type="B2XCoreResourceResourceValue" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreMachine" Member="B2XCoreMachines">
+    <Type Name="B2XCoreMachine">
+      <Column Name="MachineID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UniqueID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreMachine_B2XCoreInstanceActivity" Member="B2XCoreInstanceActivities" ThisKey="MachineID" OtherKey="MachineID" Type="B2XCoreInstanceActivity" />
+      <Association Name="B2XCoreMachine_B2XCoreSetting" Member="B2XCoreSettings" ThisKey="MachineID" OtherKey="MachineID" Type="B2XCoreSetting" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreResource" Member="B2XCoreResources">
+    <Type Name="B2XCoreResource">
+      <Column Name="ResourceID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ApplicationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreResource_B2XCoreResourceResourceValue" Member="B2XCoreResourceResourceValues" ThisKey="ResourceID" OtherKey="ResourceID" Type="B2XCoreResourceResourceValue" />
+      <Association Name="B2XCoreApplication_B2XCoreResource" Member="B2XCoreApplications" ThisKey="ApplicationID" OtherKey="ApplicationID" Type="B2XCoreApplication" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreResourceResourceValue" Member="B2XCoreResourceResourceValues">
+    <Type Name="B2XCoreResourceResourceValue">
+      <Column Name="ResourceID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ResourceValueID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreClient_B2XCoreResourceResourceValue" Member="B2XCoreClients" ThisKey="ClientID" OtherKey="ClientID" Type="B2XCoreClient" IsForeignKey="true" />
+      <Association Name="B2XCoreLanguage_B2XCoreResourceResourceValue" Member="B2XCoreLanguages" ThisKey="LanguageID" OtherKey="LanguageID" Type="B2XCoreLanguage" IsForeignKey="true" />
+      <Association Name="B2XCoreResource_B2XCoreResourceResourceValue" Member="B2XCoreResources" ThisKey="ResourceID" OtherKey="ResourceID" Type="B2XCoreResource" IsForeignKey="true" />
+      <Association Name="B2XCoreResourceValue_B2XCoreResourceResourceValue" Member="B2XCoreResourceValues" ThisKey="ResourceValueID" OtherKey="ResourceValueID" Type="B2XCoreResourceValue" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreResourceValue" Member="B2XCoreResourceValues">
+    <Type Name="B2XCoreResourceValue">
+      <Column Name="ResourceValueID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreResourceValue_B2XCoreResourceResourceValue" Member="B2XCoreResourceResourceValues" ThisKey="ResourceValueID" OtherKey="ResourceValueID" Type="B2XCoreResourceResourceValue" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreSetting" Member="B2XCoreSettings">
+    <Type Name="B2XCoreSetting">
+      <Column Name="MachineID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InstanceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SettingDefinitionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Arguments" Type="System.String" DbType="NVarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreClient_B2XCoreSetting" Member="B2XCoreClients" ThisKey="ClientID" OtherKey="ClientID" Type="B2XCoreClient" IsForeignKey="true" />
+      <Association Name="B2XCoreInstance_B2XCoreSetting" Member="B2XCoreInstances" ThisKey="InstanceID" OtherKey="InstanceID" Type="B2XCoreInstance" IsForeignKey="true" />
+      <Association Name="B2XCoreMachine_B2XCoreSetting" Member="B2XCoreMachines" ThisKey="MachineID" OtherKey="MachineID" Type="B2XCoreMachine" IsForeignKey="true" />
+      <Association Name="B2XCoreSettingDefinition_B2XCoreSetting" Member="B2XCoreSettingDefinitions" ThisKey="SettingDefinitionID" OtherKey="SettingDefinitionID" Type="B2XCoreSettingDefinition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreSettingDefinition" Member="B2XCoreSettingDefinitions">
+    <Type Name="B2XCoreSettingDefinition">
+      <Column Name="SettingDefinitionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentSettingDefinitionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UniqueID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChangedUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreSettingDefinition_B2XCoreSetting" Member="B2XCoreSettings" ThisKey="SettingDefinitionID" OtherKey="SettingDefinitionID" Type="B2XCoreSetting" />
+      <Association Name="B2XCoreSettingDefinition_B2XCoreSettingDefinition" Member="B2XCoreSettingDefinitions1" ThisKey="SettingDefinitionID" OtherKey="SettingDefinitionID" Type="B2XCoreSettingDefinition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreUser" Member="B2XCoreUsers">
+    <Type Name="B2XCoreUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordHash" Type="System.String" DbType="NChar(256)" CanBeNull="true" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastPasswordChangedUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastLockoutUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedPasswordAttempt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastFailedPasswordAttemptUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SecureKey" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastFieldUpdateUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PreferredUserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AuthenticationType" Type="AuthenticationType" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AllowAutoLogin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DomainID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreUser_B2XCoreUserDomainResource" Member="B2XCoreUserDomainResources" ThisKey="UserID" OtherKey="UserID" Type="B2XCoreUserDomainResource" />
+      <Association Name="B2XCoreUser_B2XCoreUserGroup" Member="B2XCoreUserGroups" ThisKey="UserID" OtherKey="UserID" Type="B2XCoreUserGroup" />
+      <Association Name="B2XCoreUser_B2XCoreUserProperty" Member="B2XCoreUserProperties" ThisKey="UserID" OtherKey="UserID" Type="B2XCoreUserProperty" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreUserDomainResource" Member="B2XCoreUserDomainResources">
+    <Type Name="B2XCoreUserDomainResource">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DomainResourceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreUser_B2XCoreUserDomainResource" Member="B2XCoreUsers" ThisKey="UserID" OtherKey="UserID" Type="B2XCoreUser" IsForeignKey="true" />
+      <Association Name="B2XCoreDomainResource_B2XCoreUserDomainResource" Member="B2XCoreDomainResources" ThisKey="DomainResourceID" OtherKey="DomainResourceID" Type="B2XCoreDomainResource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreUserGroup" Member="B2XCoreUserGroups">
+    <Type Name="B2XCoreUserGroup">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreGroup_B2XCoreUserGroup" Member="B2XCoreGroups" ThisKey="GroupID" OtherKey="GroupID" Type="B2XCoreGroup" IsForeignKey="true" />
+      <Association Name="B2XCoreUser_B2XCoreUserGroup" Member="B2XCoreUsers" ThisKey="UserID" OtherKey="UserID" Type="B2XCoreUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreUserProperty" Member="B2XCoreUserProperties">
+    <Type Name="B2XCoreUserProperty">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserPropertyDefinitionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreUser_B2XCoreUserProperty" Member="B2XCoreUsers" ThisKey="UserID" OtherKey="UserID" Type="B2XCoreUser" IsForeignKey="true" />
+      <Association Name="B2XCoreUserPropertyDefinition_B2XCoreUserProperty" Member="B2XCoreUserPropertyDefinitions" ThisKey="UserPropertyDefinitionID" OtherKey="UserPropertyDefinitionID" Type="B2XCoreUserPropertyDefinition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreUserPropertyDefinition" Member="B2XCoreUserPropertyDefinitions">
+    <Type Name="B2XCoreUserPropertyDefinition">
+      <Column Name="UserPropertyDefinitionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AddOnUserCreation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="B2XCoreUserPropertyDefinition_B2XCoreUserProperty" Member="B2XCoreUserProperties" ThisKey="UserPropertyDefinitionID" OtherKey="UserPropertyDefinitionID" Type="B2XCoreUserProperty" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblB2XCoreTimeZone" Member="B2XCoreTimeZones">
+    <Type Name="B2XCoreTimeZone">
+      <Column Name="TimeZoneID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StandardName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DaylightName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="BaseUtcOffset" Type="System.Decimal" DbType="Decimal NOT NULL" CanBeNull="false" />
+      <Column Name="SupportsDaylightSavingTime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Editor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" AutoSync="Never" Type="System.Data.Linq.Binary" DbType="TimeStamp NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+</Database>

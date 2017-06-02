@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 17.375" name="B2XCoreHistory">
+  <DataContextMoniker Name="/B2XCoreHistoryDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9a2c11cf-b462-46ee-84fd-a2710b987ead" absoluteBounds="0.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreApplicationHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35dc0dc8-7847-4ba0-946a-7349764f3640" absoluteBounds="0.76499999999999968, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1be13a6-379e-45d3-b48c-686a97366987" absoluteBounds="3.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreClientHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a976e5fc-2614-4121-9aec-a5020f771908" absoluteBounds="3.7649999999999997, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="333745cd-01a4-45af-aea7-5d0732cc96ab" absoluteBounds="0.75, 4.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreGroupHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc75153e-a826-45bd-9576-725f6bca76f1" absoluteBounds="0.76499999999999968, 5.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6f4b128f-c1c8-40e2-aa0f-0273908fc6a9" absoluteBounds="3.75, 4.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreImplementationHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e66df26a-6112-445b-a9eb-dc016d3d5fe8" absoluteBounds="3.7649999999999997, 5.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cade2a0f-d3e6-4ed3-880e-e64751495365" absoluteBounds="6.75, 0.75, 2, 3.1170068359375">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreInstanceActivityHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b02cae9-d4f8-4cb7-8182-a4b6ceb8cc41" absoluteBounds="6.7650000000000006, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="800026de-6780-416b-8a70-85e2281b1e56" absoluteBounds="6.75, 4.75, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreInstanceHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9eca2e4d-8fc4-4b1d-b90c-72a2d3d13a53" absoluteBounds="6.7650000000000006, 5.2100000000000009, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2bcc3678-4696-482c-9bf5-827b1d83780f" absoluteBounds="0.75, 7.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreLanguageHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="694944cf-d62d-4e16-8b13-9ef337141183" absoluteBounds="0.76500000000000012, 8.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba6f62e5-e1a4-472d-ae64-c95036aba2f7" absoluteBounds="3.75, 8.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreMachineHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b54f02c-2f0b-4d00-a9f3-294f9e6ce68d" absoluteBounds="3.7650000000000006, 9.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20c1fecb-4119-4b7f-978b-28aa8dae2463" absoluteBounds="6.75, 8.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreResourceHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e6561ff-ffc9-4b20-8657-7e8b36b719df" absoluteBounds="6.7650000000000006, 9.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea9cb2ea-77b2-48e4-9851-8fd9014ba418" absoluteBounds="9.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreResourceResourceValueHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ca9bdc8-a960-48b2-bff4-06cd99ccaa92" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c71e554-d66b-44ae-9d22-00e36a67121e" absoluteBounds="9.75, 4.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreResourceValueHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86e79bf0-02c2-4e48-8703-11b29a69da70" absoluteBounds="9.765, 5.2100000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6126645f-8913-4487-a4d0-4bfa42397439" absoluteBounds="9.75, 7.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreSettingDefinitionHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71bffb1e-7df5-4a11-8c7a-ef3ee175da0c" absoluteBounds="9.765, 8.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ecc6f61-15bb-4c57-8634-55cbddf10c8e" absoluteBounds="0.75, 11.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreSettingHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3526be1d-5f74-481d-af82-a938ddf8c483" absoluteBounds="0.76500000000000057, 12.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92101f79-e571-4dfe-ac13-d1a7e1732c9b" absoluteBounds="3.75, 11.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreUserGroupHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e91f94b-20c9-4b30-b878-671d56b73d1a" absoluteBounds="3.7649999999999997, 12.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd7c920e-b99f-47fe-95a2-68623b7215e6" absoluteBounds="6.75, 11.75, 2, 5.4246240234375023">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreUserHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f36b6516-26dc-48d7-bcf3-afd3453f90a1" absoluteBounds="6.7650000000000006, 12.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ecd4364-3df9-4ba7-af94-643d551bd30d" absoluteBounds="9.75, 11.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreUserPropertyDefinitionHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f12cfbc1-139e-49be-9306-bc82f984c80e" absoluteBounds="9.765, 12.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f990264-5352-47bc-9ad8-ae1550d2b3e0" absoluteBounds="12.75, 0.75, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreUserPropertyHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89a0389b-2c12-4025-a8b6-556c48973860" absoluteBounds="12.765, 1.2100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14695fee-bb4a-41ac-b209-2943cab5495a" absoluteBounds="12.75, 4.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreDomainHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75eaae8b-82fc-4cad-a743-6c9e785b385e" absoluteBounds="12.765, 5.2100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a52c72c5-18ec-4367-9a36-c6398cd082b8" absoluteBounds="12.75, 8.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreClientLanguageHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f254a92b-dcd4-44d5-8943-4f0852a3eabc" absoluteBounds="12.765, 9.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad781347-9c11-4c23-a13e-9bfb1a1d1500" absoluteBounds="12.75, 11.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreDomainResourceHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bd88df3-e480-4a6c-988f-113c9748f59f" absoluteBounds="12.765, 12.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d42d6675-dbb9-471c-87ba-2513cb34a5d8" absoluteBounds="12.75, 14.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreUserDomainResourceHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1b8ac9e-a8a4-4eb6-9928-d2a208af9b18" absoluteBounds="12.765, 15.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="112d37c3-4e7d-474b-918c-bad17bffc580" absoluteBounds="15.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/B2XCoreHistoryDataContext/B2XCoreTimeZoneHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="023a5fc2-0c96-47ae-87e7-216b733ead9c" absoluteBounds="15.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

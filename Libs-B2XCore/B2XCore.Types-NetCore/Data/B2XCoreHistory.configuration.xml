@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="B2XCoreHistoryDataContext" className="B2XCoreHistoryDataContext" namespace="B2XCore.Data" serviceDatabaseConnection="B2XCore.Data.B2XCoreDatabaseConfig.ConnectionString" xmlns="urn:b2xdevelopment:types">
+  <dependentFile path="B2XCore.configuration.xml" />
+  <files>
+    <interface namespace="B2XSmartClient.Contract.Administration.Services" path="../../Libs${if(directory::exists(path::combine('{0}','Libs-B2XSmartClient')),'-B2XSmartClient','')}/B2XSmartClient.Contract.Administration/Services" />
+    <service namespace="B2XSmartClient.Service.Services" path="../../Libs${if(directory::exists(path::combine('{0}','Libs-B2XSmartClient')),'-B2XSmartClient','')}/B2XSmartClient.Service.Core/Services" />
+    <data namespace="B2XCore.Models" path="../B2XCore.Data/Models" />
+    <types namespace="B2XSmartClient.Contract.Administration.Types.B2XCoreDataContext.History" path="../../Libs${if(directory::exists(path::combine('{0}','Libs-B2XSmartClient')),'-B2XSmartClient','')}/B2XSmartClient.Contract.Administration/Types/B2XCoreDataContext/History" />
+    <ui namespace="B2XSmartClient.Plugin.Administration.B2XCoreDataContext.History" assemblyName="B2XSmartClient.Plugin.Administration" path="../../Libs${if(directory::exists(path::combine('{0}','Libs-B2XSmartClient')),'-B2XSmartClient','')}/B2XSmartClient.Plugin.Administration/B2XCoreDataContext/History" />
+  </files>
+  <selectionFiles>
+    <types namespace="B2XSmartClient.Contract.Types" path="../../Libs${if(directory::exists(path::combine('{0}','Libs-B2XSmartClient')),'-B2XSmartClient','')}/B2XSmartClient.Contract.Business/Types" />
+  </selectionFiles>
+  <keysNamespaceMapping>
+    <item key="Int32Selection" value="B2XSmartClient.Contract.Types" />
+    <item key="Int32" value="B2XSmartClient.Contract.Administration.Types.B2XCoreDataContext" />
+  </keysNamespaceMapping>
+  <dependentQueryMapping />
+  <pluginConfiguration>
+    <navigation id="a361932c-1d41-40fb-a7da-6271ea4e38fa" />
+    <right resourceGroupName="All B2XCoreHistoryDataContextTable resources" resourceName="B2XCoreHistoryDataContextTable" />
+  </pluginConfiguration>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="64fa22a0-8bbf-405e-bbad-c85e7857da25" memberName="B2XCoreApplicationHistories" name="B2XCoreApplicationHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ApplicationID" memberName="ApplicationID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UniqueID" memberName="UniqueID" typeName="System.Guid" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.GuidColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="7af24ca6-e805-4fe4-8e7d-b115ff8ae9c5" memberName="B2XCoreClientHistories" name="B2XCoreClientHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ClientID" memberName="ClientID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UniqueID" memberName="UniqueID" typeName="System.Guid" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.GuidColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ApplicationID" memberName="ApplicationID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="728243af-976a-4d44-a294-4ad8b7e12c39" memberName="B2XCoreClientLanguageHistories" name="B2XCoreClientLanguageHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ClientID" memberName="ClientID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LanguageID" memberName="LanguageID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsEnabled" memberName="IsEnabled" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="5e074488-768c-4e6a-a185-48aac08ace7c" memberName="B2XCoreDomainHistories" name="B2XCoreDomainHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="DomainID" memberName="DomainID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ImplementationID" memberName="ImplementationID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Path" memberName="Path" typeName="System.String" length="100" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="AuthGroup" memberName="AuthGroup" typeName="System.String" canBeNull="True" length="10" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Suffix" memberName="Suffix" typeName="System.String" canBeNull="True" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="1fade762-28f3-47b9-8512-a5421f75664c" memberName="B2XCoreDomainResourceHistories" name="B2XCoreDomainResourceHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="DomainResourceID" memberName="DomainResourceID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="DomainID" memberName="DomainID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="05da4704-3309-49da-987c-01c1d2e6de57" memberName="B2XCoreGroupHistories" name="B2XCoreGroupHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="GroupID" memberName="GroupID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsEnabled" memberName="IsEnabled" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="0253721a-be03-45f3-9eb9-47d3a5b582de" memberName="B2XCoreImplementationHistories" name="B2XCoreImplementationHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ImplementationID" memberName="ImplementationID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="TypeName" memberName="TypeName" typeName="System.String" length="250" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="InterfaceName" memberName="InterfaceName" typeName="System.String" length="250" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="202aa295-e425-4ba8-8bee-d7c4f5186cc8" memberName="B2XCoreInstanceActivityHistories" name="B2XCoreInstanceActivityHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="InstanceID" memberName="InstanceID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="MachineID" memberName="MachineID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ProcessID" memberName="ProcessID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UniqueID" memberName="UniqueID" typeName="System.Guid" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.GuidColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="StartDateUtc" memberName="StartDateUtc" selectableMemberName="StartDate" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="EndDateUtc" memberName="EndDateUtc" selectableMemberName="EndDate" typeName="System.DateTime" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LastIsAliveUtc" memberName="LastIsAliveUtc" selectableMemberName="LastIsAlive" typeName="System.DateTime" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ClientIP" memberName="ClientIP" typeName="System.String" canBeNull="True" length="15" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="36d17562-6f92-432a-94fa-299765736386" memberName="B2XCoreInstanceHistories" name="B2XCoreInstanceHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="InstanceID" memberName="InstanceID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UniqueID" memberName="UniqueID" typeName="System.Guid" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.GuidColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ApplicationName" memberName="ApplicationName" typeName="System.String" length="150" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="InstanceName" memberName="InstanceName" typeName="System.String" length="150" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="dc2fe65a-0e43-48e4-97a8-4fed2c5cf9e8" memberName="B2XCoreLanguageHistories" name="B2XCoreLanguageHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LanguageID" memberName="LanguageID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="15" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="EnglishName" memberName="EnglishName" typeName="System.String" length="100" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="NativeName" memberName="NativeName" typeName="System.String" length="100" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IetfLanguageTag" memberName="IetfLanguageTag" typeName="System.String" length="15" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ThreeLetterISOLanguageName" memberName="ThreeLetterISOLanguageName" typeName="System.String" length="6" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ThreeLetterWindowsLanguageName" memberName="ThreeLetterWindowsLanguageName" typeName="System.String" length="6" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="TwoLetterISOLanguageName" memberName="TwoLetterISOLanguageName" typeName="System.String" length="3" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="a44c732d-aebe-425c-a534-5388eb776cb3" memberName="B2XCoreMachineHistories" name="B2XCoreMachineHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="MachineID" memberName="MachineID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UniqueID" memberName="UniqueID" typeName="System.Guid" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.GuidColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="8a555917-7e17-4bef-8da8-99967435e4c1" memberName="B2XCoreResourceHistories" name="B2XCoreResourceHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ResourceID" memberName="ResourceID" typeName="System.Int64" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int64ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ApplicationID" memberName="ApplicationID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Name" memberName="Name" typeName="System.String" length="150" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="d1325e90-4c0f-4304-9d68-1b4c83914640" memberName="B2XCoreResourceResourceValueHistories" name="B2XCoreResourceResourceValueHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ResourceID" memberName="ResourceID" typeName="System.Int64" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int64ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LanguageID" memberName="LanguageID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ClientID" memberName="ClientID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ResourceValueID" memberName="ResourceValueID" typeName="System.Int64" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int64ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="9486fb4e-adf8-4370-8dd4-014dba2a1b25" memberName="B2XCoreResourceValueHistories" name="B2XCoreResourceValueHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ResourceValueID" memberName="ResourceValueID" typeName="System.Int64" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int64ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Value" memberName="Value" typeName="System.String" length="2147483647" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="16cf1e43-9fc8-424f-9297-0ea46d0cdfbd" memberName="B2XCoreSettingDefinitionHistories" name="B2XCoreSettingDefinitionHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="SettingDefinitionID" memberName="SettingDefinitionID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ParentSettingDefinitionID" memberName="ParentSettingDefinitionID" typeName="System.Int32" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UniqueID" memberName="UniqueID" typeName="System.Guid" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.GuidColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ChangedUtc" memberName="ChangedUtc" selectableMemberName="Changed" typeName="System.DateTime" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="da4f0827-aaa5-4281-91df-e5da0ffd62b4" memberName="B2XCoreSettingHistories" name="B2XCoreSettingHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="MachineID" memberName="MachineID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="InstanceID" memberName="InstanceID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ClientID" memberName="ClientID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="SettingDefinitionID" memberName="SettingDefinitionID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Arguments" memberName="Arguments" typeName="System.String" length="250" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Value" memberName="Value" typeName="System.String" length="2147483647" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="4b9a4471-8656-4bb9-9c72-252bca04af5b" memberName="B2XCoreTimeZoneHistories" name="B2XCoreTimeZoneHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="TimeZoneID" memberName="TimeZoneID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Key" memberName="Key" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="DisplayName" memberName="DisplayName" typeName="System.String" length="100" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="StandardName" memberName="StandardName" typeName="System.String" length="100" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="DaylightName" memberName="DaylightName" typeName="System.String" length="100" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="BaseUtcOffset" memberName="BaseUtcOffset" typeName="System.Decimal" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.DecimalColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="SupportsDaylightSavingTime" memberName="SupportsDaylightSavingTime" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="cdc0a759-d236-43c7-9f10-f75803a95eae" memberName="B2XCoreUserDomainResourceHistories" name="B2XCoreUserDomainResourceHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="DomainResourceID" memberName="DomainResourceID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="23481f4b-f7da-408e-a857-87f4a8963e4f" memberName="B2XCoreUserGroupHistories" name="B2XCoreUserGroupHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="GroupID" memberName="GroupID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsEnabled" memberName="IsEnabled" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="854d9dd7-ab68-4bb2-90f0-772c59c57331" memberName="B2XCoreUserHistories" name="B2XCoreUserHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UserName" memberName="UserName" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LastName" memberName="LastName" typeName="System.String" canBeNull="True" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="FirstName" memberName="FirstName" typeName="System.String" canBeNull="True" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Email" memberName="Email" typeName="System.String" length="100" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="PasswordHash" memberName="PasswordHash" typeName="System.String" canBeNull="True" length="256" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="PasswordSalt" memberName="PasswordSalt" typeName="System.String" canBeNull="True" length="2147483647" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LastPasswordChangedUtc" memberName="LastPasswordChangedUtc" selectableMemberName="LastPasswordChanged" typeName="System.DateTime" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsApproved" memberName="IsApproved" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LastLockoutUtc" memberName="LastLockoutUtc" selectableMemberName="LastLockout" typeName="System.DateTime" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsLockedOut" memberName="IsLockedOut" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LastFailedPasswordAttemptUtc" memberName="LastFailedPasswordAttemptUtc" selectableMemberName="LastFailedPasswordAttempt" typeName="System.DateTime" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="FailedPasswordAttempt" memberName="FailedPasswordAttempt" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="SecureKey" memberName="SecureKey" typeName="System.String" canBeNull="True" length="32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="LastFieldUpdateUtc" memberName="LastFieldUpdateUtc" selectableMemberName="LastFieldUpdate" typeName="System.DateTime" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsEnabled" memberName="IsEnabled" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="DomainID" memberName="DomainID" typeName="System.Int32" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="PreferredUserName" memberName="PreferredUserName" typeName="System.String" canBeNull="True" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="AuthenticationType" memberName="AuthenticationType" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="AllowAutoLogin" memberName="AllowAutoLogin" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="fc75ca07-f39b-4204-9491-93193a7b117b" memberName="B2XCoreUserPropertyDefinitionHistories" name="B2XCoreUserPropertyDefinitionHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UserPropertyDefinitionID" memberName="UserPropertyDefinitionID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Key" memberName="Key" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Value" memberName="Value" typeName="System.String" canBeNull="True" length="250" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsPublic" memberName="IsPublic" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="AddOnUserCreation" memberName="AddOnUserCreation" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Description" memberName="Description" typeName="System.String" canBeNull="True" length="250" hasLongText="true" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsEnabled" memberName="IsEnabled" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+  <table canCreateEntry="false" canModifyEntry="false" canDeleteEntry="false" id="2753f37c-3be4-43bc-811d-6d401fe9ddad" memberName="B2XCoreUserPropertyHistories" name="B2XCoreUserPropertyHistory">
+    <column isPrimaryKey="True" isDbGenerated="True" name="HistoryID" memberName="HistoryID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="UserPropertyDefinitionID" memberName="UserPropertyDefinitionID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Value" memberName="Value" typeName="System.String" length="250" hasLongText="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsPublic" memberName="IsPublic" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="IsEnabled" memberName="IsEnabled" typeName="System.Boolean" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BooleanColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
+    <column name="ModifiedUtc" memberName="ModifiedUtc" selectableMemberName="Modified" typeName="System.DateTime" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.LocalDateTimeColumnCodeGenerator, B2XDevelopment.Core" />
+  </table>
+</dataContext>

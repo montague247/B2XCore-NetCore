@@ -26,4 +26,8 @@
     <PackageReference Include="System.ComponentModel" Version="4.3.0" />
     <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="B2XCore.snk" />
+    <None Remove="B2XCore.Types.csproj.b2xdevconfig" />
+  </ItemGroup>
 </Project>
