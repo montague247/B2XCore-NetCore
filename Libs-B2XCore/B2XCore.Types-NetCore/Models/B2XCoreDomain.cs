@@ -30,8 +30,8 @@ namespace B2XCore.Models
 		/// </summary>
 		/// <value>
 		/// The Name.
-		[DataMember]
 		/// </value>
+		[DataMember]
 		public string Name { get; set; }
 
 		/// <summary>

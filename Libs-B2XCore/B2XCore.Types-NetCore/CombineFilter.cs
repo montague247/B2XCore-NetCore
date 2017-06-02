@@ -24,7 +24,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+#if !NETCORE
 using System.Xml.Serialization;
+#endif
 
 namespace B2XCore
 {
