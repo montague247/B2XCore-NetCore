@@ -21,7 +21,11 @@
 
 #endregion License & Copyright
 
+#if NETCORE
+using System.Runtime.Serialization;
+#else
 using System.Xml.Serialization;
+#endif
 
 namespace B2XCore.Configuration
 {
@@ -61,17 +65,29 @@ namespace B2XCore.Configuration
         /// <value>
         /// The name.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "name")]
+#else
         [XmlAttribute(AttributeName = "name")]
+#endif
         public string Name { get; set; }
 
         /// <summary>Gets or sets the name of the type.</summary>
         /// <value>The name of the type.</value>
+#if NETCORE
+        [DataMember(Name = "type")]
+#else
         [XmlAttribute(AttributeName = "type")]
+#endif
         public string TypeName { get; set; }
 
         /// <summary>Gets or sets the maximum length.</summary>
         /// <value>The maximum length.</value>
+#if NETCORE
+        [DataMember(Name = "maxLength")]
+#else
         [XmlAttribute(AttributeName = "maxLength")]
+#endif
         public int MaxLength { get { return _maxLength; } set { _maxLength = value; MaxLengthSpecified = _maxLength > 0; } }
 
         /// <summary>
@@ -80,39 +96,63 @@ namespace B2XCore.Configuration
         /// <value>
         /// <c>true</c> if [maximum length specified]; otherwise, <c>false</c>.
         /// </value>
+#if NETCORE
+        [IgnoreDataMember]
+#else
         [XmlIgnore]
+#endif
         public bool MaxLengthSpecified { get; set; }
 
-        /// <summary>Gets or sets the is enabled.</summary>
-        /// <value>The is enabled.</value>
+		/// <summary>Gets or sets the is enabled.</summary>
+		/// <value>The is enabled.</value>
+#if NETCORE
+		[DataMember(Name = "enabled")]
+#else
         [XmlAttribute(AttributeName = "enabled")]
-        public string IsEnabledString { get; set; }
+#endif
+		public string IsEnabledString { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is enabled.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if this instance is enabled; otherwise, <c>false</c>.
-        /// </value>
+		/// <summary>
+		/// Gets or sets a value indicating whether this instance is enabled.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> if this instance is enabled; otherwise, <c>false</c>.
+		/// </value>
+#if NETCORE
+		[IgnoreDataMember]
+#else
         [XmlIgnore]
-        public bool? IsEnabled { get; set; }
+#endif
+		public bool? IsEnabled { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance has field.
-        /// </summary>
-        /// <value><c>true</c> if this instance has field; otherwise, <c>false</c>.</value>
+		/// <summary>
+		/// Gets or sets a value indicating whether this instance has field.
+		/// </summary>
+		/// <value><c>true</c> if this instance has field; otherwise, <c>false</c>.</value>
+#if NETCORE
+		[IgnoreDataMember]
+#else
         [XmlIgnore]
-        public bool HasField { get; set; }
+#endif
+		public bool HasField { get; set; }
 
-        /// <summary>Gets or sets the index of the field.</summary>
-        /// <value>The index of the field.</value>
+		/// <summary>Gets or sets the index of the field.</summary>
+		/// <value>The index of the field.</value>
+#if NETCORE
+		[IgnoreDataMember]
+#else
         [XmlIgnore]
-        public int FieldIndex { get; set; }
+#endif
+		public int FieldIndex { get; set; }
 
-        /// <summary>Gets or sets the value.</summary>
-        /// <value>The value.</value>
+		/// <summary>Gets or sets the value.</summary>
+		/// <value>The value.</value>
+#if NETCORE
+		[IgnoreDataMember]
+#else
         [XmlIgnore]
-        public object Value { get; private set; }
+#endif
+		public object Value { get; private set; }
 
         /// <summary>Sets the value.</summary>
         /// <param name="value">The value.</param>

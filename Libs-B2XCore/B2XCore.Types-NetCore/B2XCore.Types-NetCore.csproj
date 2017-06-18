@@ -29,5 +29,23 @@
   <ItemGroup>
     <None Remove="B2XCore.snk" />
     <None Remove="B2XCore.Types.csproj.b2xdevconfig" />
+    <None Remove="Data\B2XCore.configuration.xml" />
+    <None Remove="Data\B2XCore.dbml" />
+    <None Remove="Data\B2XCore.dbml.layout" />
+    <None Remove="Data\B2XCoreHistory.configuration.xml" />
+    <None Remove="Data\B2XCoreHistory.dbml" />
+    <None Remove="Data\B2XCoreHistory.dbml.layout" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Data\B2XCore.dependentquery.cs" />
+    <Compile Remove="Data\B2XCore.designer.cs" />
+    <Compile Remove="Data\B2XCore.historiography.cs" />
+    <Compile Remove="Data\B2XCoreHistory.designer.cs" />
+    <Compile Remove="CombineFilter.cs" />
+    <Compile Remove="CombineType.cs" />
+    <Compile Remove="CompareFilter.cs" />
+    <Compile Remove="CompareType.cs" />
+    <Compile Remove="Filter.cs" />
+    <Compile Remove="FilterSet.cs" />
   </ItemGroup>
 </Project>

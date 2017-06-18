@@ -23,7 +23,12 @@
 
 using System;
 using System.ComponentModel;
+#if NETCORE
+using System.Reflection;
+using System.Runtime.Serialization;
+#else
 using System.Xml.Serialization;
+#endif
 
 namespace B2XCore.Configuration
 {
@@ -32,25 +37,39 @@ namespace B2XCore.Configuration
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(PropertySorter))]
+#if !NETCORE
     [DefaultProperty("CompareType")]
+#endif
     public sealed class CompareFilter
     {
         /// <summary>Gets or sets the key.</summary>
         /// <value>The key.</value>
         [Category("Compare"), PropertyOrder(1)]
+#if NETCORE
+        [DataMember(Name = "key")]
+#else
         [XmlAttribute(AttributeName = "key")]
+#endif
         public string Key { get; set; }
 
         /// <summary>Gets or sets the type of the compare.</summary>
         /// <value>The type of the compare.</value>
         [Category("Compare"), DefaultValue(CompareType.Equal), PropertyOrder(2)]
+#if NETCORE
+        [DataMember(Name = "type")]
+#else
         [XmlAttribute(AttributeName = "type")]
+#endif
         public CompareType CompareType { get; set; }
 
         /// <summary>Gets or sets the value.</summary>
         /// <value>The value.</value>
         [Category("Compare"), PropertyOrder(3)]
-        [XmlElement(ElementName = "value")]
+#if NETCORE
+        [DataMember(Name = "value")]
+#else
+        [XmlAttribute(AttributeName = "value")]
+#endif
         public object[] Value { get; set; }
 
         /// <summary>
@@ -64,24 +83,29 @@ namespace B2XCore.Configuration
 
         private static string GetDescriptionOfEnumValue(Enum value)
         {
-            Type type = value.GetType();
+            var type = value.GetType();
 
+#if NETCORE
+            var ti = type.GetTypeInfo();
+
+            if (!ti.IsEnum)
+				throw new ArgumentException("Type is not an Enum.");
+
+            throw new NotImplementedException();
+#else
             if (!type.IsEnum)
-            {
                 throw new ArgumentException("Type is not an Enum.");
-            }
 
             var mi = type.GetMember(Enum.GetName(type, value));
 
             var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(mi[0], typeof(DescriptionAttribute));
 
             if (attribute != null)
-            {
                 return attribute.Description;
-            }
 
             return value.ToString();
-        }
+#endif
+		}
 
     }
 }
