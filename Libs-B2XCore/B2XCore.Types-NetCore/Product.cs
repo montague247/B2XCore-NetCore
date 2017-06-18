@@ -40,12 +40,12 @@ namespace B2XCore.Types
 		/// <summary>
 		/// File version of the application.
 		/// </summary>
-		internal const string FileVersion = "1.2.17637";
+		internal const string FileVersion = "1.2.17950";
 
 		/// <summary>
 		/// Version of the application.
 		/// </summary>
-		internal const string Version = "1.2.17637.17637";
+		internal const string Version = "1.2.17950.17950";
 
 		#endregion Constants
 	}

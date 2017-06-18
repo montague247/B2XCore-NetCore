@@ -238,7 +238,7 @@
     <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
     <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
   </table>
-  <table id="c2464ccb-f8d9-4520-89eb-28115ae71a8e" memberName="B2XCoreUsers" selectionValue="{2}, {3} ({1})" name="B2XCoreUser">
+  <table id="c2464ccb-f8d9-4520-89eb-28115ae71a8e" memberName="B2XCoreUsers" selectionValue="{2}, {3} ({1})" name="B2XCoreUser" orderBy="e.LastName,e.FirstName,e.UserName">
     <column isPrimaryKey="True" isDbGenerated="True" name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.Int32ColumnCodeGenerator, B2XDevelopment.Core" />
     <column name="DomainID" memberName="DomainID" typeName="System.Int32" canBeNull="True" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.ComboBoxColumnCodeGenerator, B2XDevelopment.Core">
       <association name="B2XCoreDomain_B2XCoreUser" self="True" otherKey="DomainID" tableId="d92a7401-7f86-48fb-90ca-cdd17d74920a" tableName="B2XCoreDomain" />
@@ -274,7 +274,7 @@
       <parameter type="B2XSmartClient.Contract.Types.IntegerIdStringValueRequest" />
     </selection>
   </table>
-  <table id="cea307ff-7d88-487c-8905-cdd32b818fa6" memberName="B2XCoreUserDomainResources" selectionValue="{2}" name="B2XCoreUserDomainResource">
+  <table id="cea307ff-7d88-487c-8905-cdd32b818fa6" memberName="B2XCoreUserDomainResources" selectionValue="{2}" name="B2XCoreUserDomainResource" orderByWithAssociation="e1 == null ? (System.String)null : e1.LastName,e1 == null ? (System.String)null : e1.FirstName,e1 == null ? (System.String)null : e1.UserName,e2 == null ? null : e2.Name">
     <column isPrimaryKey="True" name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.ComboBoxColumnCodeGenerator, B2XDevelopment.Core">
       <association name="B2XCoreUser_B2XCoreUserDomainResource" otherKey="UserID" tableId="c2464ccb-f8d9-4520-89eb-28115ae71a8e" tableName="B2XCoreUser" />
     </column>
@@ -285,7 +285,7 @@
     <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
     <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
   </table>
-  <table id="fb2eec40-9473-4208-938b-dc46806f71c3" memberName="B2XCoreUserGroups" selectionValue="{2}" name="B2XCoreUserGroup">
+  <table id="fb2eec40-9473-4208-938b-dc46806f71c3" memberName="B2XCoreUserGroups" selectionValue="{2}" name="B2XCoreUserGroup" orderByWithAssociation="e1 == null ? (System.String)null : e1.LastName,e1 == null ? (System.String)null : e1.FirstName,e1 == null ? (System.String)null : e1.UserName,e2 == null ? (System.String)null : e2.Name">
     <column isPrimaryKey="True" name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.ComboBoxColumnCodeGenerator, B2XDevelopment.Core">
       <association name="B2XCoreUser_B2XCoreUserGroup" otherKey="UserID" tableId="c2464ccb-f8d9-4520-89eb-28115ae71a8e" tableName="B2XCoreUser" />
     </column>
@@ -297,7 +297,7 @@
     <column name="Editor" memberName="Editor" typeName="System.String" length="50" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.StringColumnCodeGenerator, B2XDevelopment.Core" />
     <column name="RowVersion" memberName="RowVersion" typeName="System.Data.Linq.Binary" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.BinaryColumnCodeGenerator, B2XDevelopment.Core" />
   </table>
-  <table id="52891fc5-2d4e-4e42-9a05-20fffad4f533" memberName="B2XCoreUserProperties" name="B2XCoreUserProperty">
+  <table id="52891fc5-2d4e-4e42-9a05-20fffad4f533" memberName="B2XCoreUserProperties" name="B2XCoreUserProperty" orderByWithAssociation="e1 == null ? (System.String)null : e1.LastName,e1 == null ? (System.String)null : e1.FirstName,e1 == null ? (System.String)null : e1.UserName,e2 == null ? null : e2.Key">
     <column isPrimaryKey="True" name="UserID" memberName="UserID" typeName="System.Int32" codeGeneratorTypeName="B2XDevelopment.Core.VisualStudio.CodeGenerator.ComboBoxColumnCodeGenerator, B2XDevelopment.Core">
       <association name="B2XCoreUser_B2XCoreUserProperty" otherKey="UserID" tableId="c2464ccb-f8d9-4520-89eb-28115ae71a8e" tableName="B2XCoreUser" />
     </column>

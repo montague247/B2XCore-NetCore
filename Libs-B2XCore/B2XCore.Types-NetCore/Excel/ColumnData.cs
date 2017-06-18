@@ -50,12 +50,13 @@ namespace B2XCore.Excel
         /// <param name="hidden">if set to <c>true</c> [hidden].</param>
         /// <param name="width">The width.</param>
         /// <param name="wrapped">if set to <c>true</c> [wrapped].</param>
-        /// <param name="refColumn">The reference column.</param>
+        /// <param name="refColumnName">Name of the reference column.</param>
         /// <param name="invertSuccess">The invert success.</param>
         /// <param name="successValue">The success value.</param>
-        /// <param name="formula">The formula.</param>
+        /// <param name="columnFormula">The column formula.</param>
+        /// <param name="totalsFormula">The totals formula.</param>
         /// <param name="tooltip">The tooltip.</param>
-        public ColumnData(string name, string dataTypeName, SubTotalType subTotalType = SubTotalType.None, bool hidden = false, int? width = null, bool wrapped = false, int? refColumn = null, bool? invertSuccess = null, string successValue = null, string formula = null, string tooltip = null)
+        public ColumnData(string name, string dataTypeName, SubTotalType subTotalType = SubTotalType.None, bool hidden = false, int? width = null, bool wrapped = false, string refColumnName = null, bool? invertSuccess = null, string successValue = null, string columnFormula = null, string totalsFormula = null, string tooltip = null)
         {
             Name = name;
             DataTypeName = dataTypeName;
@@ -63,10 +64,11 @@ namespace B2XCore.Excel
             Hidden = hidden;
             Width = width;
             Wrapped = wrapped;
-            RefColumn = refColumn;
+            RefColumnName = refColumnName;
             InvertSuccess = invertSuccess;
             SuccessValue = successValue;
-            Formula = formula ?? string.Empty;
+            ColumnFormula = columnFormula;
+            TotalsFormula = totalsFormula ?? string.Empty;
             Tooltip = tooltip;
         }
 
@@ -125,13 +127,13 @@ namespace B2XCore.Excel
         public bool Wrapped { get; set; }
 
         /// <summary>
-        /// Gets the reference column.
+        /// Gets or sets the name of the reference column.
         /// </summary>
         /// <value>
-        /// The reference column.
+        /// The name of the reference column.
         /// </value>
         [DataMember]
-        public int? RefColumn { get; set; }
+        public string RefColumnName { get; set; }
 
         /// <summary>
         /// Gets the invert success.
@@ -161,13 +163,22 @@ namespace B2XCore.Excel
         public bool IsSuccess { get; set; }
 
         /// <summary>
+        /// Gets or sets the column formula.
+        /// </summary>
+        /// <value>
+        /// The column formula.
+        /// </value>
+        [DataMember]
+        public string ColumnFormula { get; set; }
+
+        /// <summary>
         /// Gets or sets the formula.
         /// </summary>
         /// <value>
         /// The formula.
         /// </value>
         [DataMember]
-        public string Formula { get; set; }
+        public string TotalsFormula { get; set; }
 
         /// <summary>
         /// Gets or sets the tooltip.
@@ -191,11 +202,24 @@ namespace B2XCore.Excel
             {
                 if (SuccessValue == null)
                     return InvertSuccess == true ?
-                        string.Concat("IF(RC[", RefColumn, "]=\"\",\"\",IF(RC[", RefColumn, "]=0,1,0))") :
-                        string.Concat("IF(RC[", RefColumn, "]=\"\",\"\",RC[", RefColumn, "])");
+                        string.Concat("IF([", RefColumnName, "]=\"\",\"\",IF([", RefColumnName, "]=0,1,0))") :
+                        string.Concat("IF([", RefColumnName, "]=\"\",\"\",[", RefColumnName, "])");
                 else
-                    return string.Concat("IF(RC[", RefColumn, "]=\"\",\"\",IF(RC[", RefColumn, "]=\"", SuccessValue, "\",1,0))");
+                    return string.Concat("IF([", RefColumnName, "]=\"\",\"\",IF([", RefColumnName, "]=\"", SuccessValue, "\",1,0))");
             }
+        }
+
+        /// <summary>
+        /// Gets the column formula.
+        /// </summary>
+        /// <param name="columns">The columns.</param>
+        /// <returns></returns>
+        public string GetColumnFormula(List<ColumnData> columns)
+        {
+            if (SubTotalType == SubTotalType.Formula)
+                return ConvertFormula(Name, ColumnFormula, columns);
+            else
+                return ColumnFormula ?? string.Concat("[", Name, "]");
         }
 
         /// <summary>
@@ -207,9 +231,48 @@ namespace B2XCore.Excel
         public string GetTotalsRowFormula(string tableName, List<ColumnData> columns)
         {
             if (SubTotalType == SubTotalType.Formula)
-                return ConvertFormula(Name, Formula, tableName, columns);
+                return ConvertFormula(Name, TotalsFormula, tableName, columns);
             else
                 return string.Concat("IFERROR(SUBTOTAL(", SubTotalType.GetHashCode(), ",", tableName, "[", Name, "]),\"\")");
+        }
+
+        /// <summary>
+        /// Converts the formula.
+        /// </summary>
+        /// <param name="columnName">Name of the column.</param>
+        /// <param name="formula">The formula.</param>
+        /// <param name="columns">The columns.</param>
+        /// <returns></returns>
+        public static string ConvertFormula(string columnName, string formula, List<ColumnData> columns)
+        {
+            var idx = -1;
+
+            for (int i = 0; i < columns.Count; i++)
+            {
+                if (string.Compare(columns[i].Name, columnName, StringComparison.Ordinal) == 0)
+                {
+                    idx = i;
+
+                    break;
+                }
+            }
+
+            if (idx == -1)
+                return null;
+
+            for (int i = 0; i < columns.Count; i++)
+            {
+                var rel = i - idx;
+                var v = string.Concat("RC[", rel, "]");
+                var c = columns[i];
+
+                while (formula.Contains(v))
+                {
+                    formula = formula.Replace(v, c.GetColumnFormula(columns));
+                }
+            }
+
+            return formula;
         }
 
         /// <summary>

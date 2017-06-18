@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <developmentExtension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:b2xdevelopment:types">
   <project assemblyName="B2XCore.Types" copyright="Copyright © {0} Dirk Helbig" outputPath="bin\Debug\" productName="B2XCore">
-    <checksum interfaces="40C8734F25CB9B2D24FF0D4FE0AF32FD4EA06E7797C569ADF86882E56E12D29FD1CD3291D18BFB3F01FE529F1DEB0FBFE615D79E9635F5DC170370C1E9B805E9" project="BC0A3C9ED26E48F3147B9A92BEEF180250297B55EEC11767C107C99FB39921D060C810F1AC3E2B193F0264C50C64C050B0C2DAA96F9B384CEB353472D8026D4F" />
+    <checksum interfaces="F1EB3236C64B18EC99D8A67CC3290B6CD77DE70FF5F18286D47DFDEB8F4BF8D2D80A9D052B21B98805F6907D731D9FF952181890DB83C74BAE9A0BD093003402" project="150E64EF64F7BEA51296EB8066F80C721C1EB4BBB0E2F029E0C7360C85D07AC097F615B9B267F5D147CF7F34F33D99178B1B12950B879D777073FDACBE500ED5" />
     <file path="Data\B2XCore.dbml" className="B2XCoreDataContext" namespace="B2XCore.Data">
       <action typeName="B2XDevelopment.Core.VisualStudio.Actions.FileActions.DataContextSyncFileAction, B2XDevelopment.Core">
         <project>
@@ -141,6 +141,6 @@
     <implementation skip="True" typeName="B2XDevelopment.Core.VisualStudio.Actions.ProjectActions.SmartClientApplicationConfigurationProjectAction, B2XDevelopment.Core" />
     <implementation skip="True" typeName="B2XDevelopment.Core.VisualStudio.Actions.ProjectActions.ProjectVersionProjectAction, B2XDevelopment.Core" />
     <implementation skip="True" typeName="B2XDevelopment.Core.VisualStudio.Actions.ProjectActions.EntityFrameworkMigrationHashProjectAction, B2XDevelopment.Core" />
-    <version build="17637" major="1" minor="2" revision="17637" />
+    <version build="17950" major="1" minor="2" revision="17950" />
   </project>
 </developmentExtension>
