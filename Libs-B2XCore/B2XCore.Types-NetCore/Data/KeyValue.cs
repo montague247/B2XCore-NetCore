@@ -23,7 +23,11 @@
 
 using System;
 using System.Runtime.InteropServices;
+#if NETCORE
+using System.Runtime.Serialization;
+#else
 using System.Xml.Serialization;
+#endif
 using B2XCore.Configuration;
 
 namespace B2XCore.Data
@@ -58,19 +62,27 @@ namespace B2XCore.Data
         /// </summary>
         /// <value>The key.</value>
         [ConfigurationDisplayName(0)]
+#if NETCORE
+        [DataMember(Name = "enabled")]
+#else
         [XmlAttribute("key")]
+#endif
         public string Key { get; set; }
 
         /// <summary>
         /// Gets or sets the value.
         /// </summary>
         /// <value>The value.</value>
+#if NETCORE
+        [DataMember(Name = "value ")]
+#else
         [XmlAttribute("value")]
+#endif
         public string Value { get; set; }
 
-        #endregion Public properties
+#endregion Public properties
 
-        #region Public methods
+#region Public methods
 
         /// <summary>
         /// Indicates whether this instance and a specified object are equal.
@@ -120,6 +132,6 @@ namespace B2XCore.Data
                 string.Compare(keyValue1.Value, keyValue2.Value, StringComparison.Ordinal) != 0;
         }
 
-        #endregion Public methods
+#endregion Public methods
     }
 }

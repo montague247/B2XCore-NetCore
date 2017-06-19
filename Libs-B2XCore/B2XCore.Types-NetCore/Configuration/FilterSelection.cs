@@ -24,7 +24,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+#if NETCORE
+using System.Runtime.Serialization;
+#else
 using System.Xml.Serialization;
+#endif
 
 namespace B2XCore.Configuration
 {
@@ -33,8 +37,10 @@ namespace B2XCore.Configuration
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(PropertySorter))]
+#if !NETCORE
     [DefaultProperty("Entries")]
     //[XmlRoot(ElementName = "filter", IsNullable = false)]
+#endif
     public sealed class FilterSelection
     {
         /// <summary>
@@ -48,7 +54,11 @@ namespace B2XCore.Configuration
         /// <summary>Gets or sets the entries.</summary>
         /// <value>The entries.</value>
         [Category("Filter"), PropertyOrder(1)]
+#if NETCORE
+        [DataMember(Name = "entry")]
+#else
         [XmlElement(ElementName = "entry")]
+#endif
         public List<FilterEntry> Entries { get; set; }
     }
 }

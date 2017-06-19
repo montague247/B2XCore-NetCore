@@ -23,8 +23,12 @@
 
 using System;
 using System.ComponentModel;
+#if NETCORE
+using System.Reflection;
 using System.Runtime.Serialization;
+#else
 using System.Xml.Serialization;
+#endif
 
 namespace B2XCore.Configuration
 {
@@ -33,7 +37,9 @@ namespace B2XCore.Configuration
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(PropertySorter))]
+#if !NETCORE
     [DefaultProperty("Column")]
+#endif
     [DataContract(Namespace = Constants.CoreTypeNamespace)]
     public sealed class FilterEntry
     {
@@ -42,44 +48,55 @@ namespace B2XCore.Configuration
         /// <summary>Gets or sets the table.</summary>
         /// <value>The table.</value>
         [Category("Entry"), DefaultValue(null), PropertyOrder(1)]
+#if NETCORE
+        [DataMember(Name = "table")]
+#else
         [XmlAttribute(AttributeName = "table")]
-        [DataMember]
+#endif
         public string Table { get; set; }
 
         /// <summary>Gets or sets the column.</summary>
         /// <value>The column.</value>
         [Category("Entry"), PropertyOrder(2)]
+#if NETCORE
+        [DataMember(Name = "column")]
+#else
         [XmlAttribute(AttributeName = "column")]
-        [DataMember]
+#endif
         public string Column { get; set; }
 
         /// <summary>Gets or sets the value.</summary>
         /// <value>The value.</value>
         [Category("Entry"), DefaultValue(null), PropertyOrder(3)]
+#if NETCORE
+        [DataMember(Name = "display")]
+#else
         [XmlAttribute(AttributeName = "display")]
-        [DataMember]
+#endif
         public string DisplayName { get; set; }
 
         /// <summary>Gets or sets the type of the entry.</summary>
         /// <value>The type of the entry.</value>
         [Category("Entry"), PropertyOrder(4)]
-        [XmlIgnore]
+#if NETCORE
         [IgnoreDataMember]
+#else
+        [XmlIgnore]
+#endif
         public Type EntryType
         {
             get
             {
                 if (_entryType == null &&
                     TypeName != null)
-                {
                     _entryType = Type.GetType(TypeName);
-                }
 
                 return _entryType;
             }
             set
             {
                 TypeName = GetTypeName(value);
+
                 _entryType = value;
             }
         }
@@ -87,15 +104,21 @@ namespace B2XCore.Configuration
         /// <summary>Gets or sets the name of the type.</summary>
         /// <value>The name of the type.</value>
         [Browsable(false)]
+#if NETCORE
+        [DataMember(Name = "type")]
+#else
         [XmlAttribute(AttributeName = "type")]
-        [DataMember]
+#endif
         public string TypeName { get; set; }
 
         /// <summary>Gets the key.</summary>
         /// <value>The key.</value>
         [Category("Entry"), PropertyOrder(5)]
-        [XmlIgnore]
+#if NETCORE
         [IgnoreDataMember]
+#else
+        [XmlIgnore]
+#endif
         public string Key
         {
             get
@@ -103,9 +126,7 @@ namespace B2XCore.Configuration
                 var key = string.Concat('[', Column, ']');
 
                 if (!string.IsNullOrEmpty(Table))
-                {
                     key = string.Concat('[', Table, ']', key);
-                }
 
                 return key;
             }
@@ -124,9 +145,13 @@ namespace B2XCore.Configuration
         {
             if (type == null) return null;
 
-            string name = type.Assembly.FullName;
+#if NETCORE
+			var name = type.GetTypeInfo().Assembly.FullName;
+#else
+            var name = type.Assembly.FullName;
+#endif
 
-            name = string.Concat(type.FullName, ", ", name.Substring(0, name.IndexOf(',')));
+			name = string.Concat(type.FullName, ", ", name.Substring(0, name.IndexOf(',')));
 
             return name;
         }

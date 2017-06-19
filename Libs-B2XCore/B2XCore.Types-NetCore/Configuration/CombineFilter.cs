@@ -34,9 +34,11 @@ namespace B2XCore.Configuration
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(PropertySorter))]
+#if !NETCORE
     [DefaultProperty("CombineType")]
     [XmlRoot(ElementName = "filter", IsNullable = false)]
-    [DataContract(Namespace = Constants.CoreTypeNamespace)]
+#endif
+    [DataContract(Name = "filter", Namespace = Constants.CoreTypeNamespace)]
     public sealed class CombineFilter
     {
         /// <summary>
@@ -51,22 +53,31 @@ namespace B2XCore.Configuration
         /// <summary>Gets or sets the compare.</summary>
         /// <value>The compare.</value>
         [Category("Type"), DefaultValue(CombineType.And), PropertyOrder(1)]
+#if NETCORE
+        [DataMember(Name = "type")]
+#else
         [XmlAttribute(AttributeName = "type")]
-        [DataMember]
+#endif
         public CombineType CombineType { get; set; }
 
         /// <summary>Gets or sets the combines.</summary>
         /// <value>The combines.</value>
         [Category("Filter"), PropertyOrder(2)]
+#if NETCORE
+        [DataMember(Name = "combine")]
+#else
         [XmlElement(ElementName = "combine")]
-        [DataMember]
+#endif
         public List<CombineFilter> Combines { get; set; }
 
         /// <summary>Gets or sets the compares.</summary>
         /// <value>The compares.</value>
         [Category("Filter"), PropertyOrder(3)]
+#if NETCORE
+        [DataMember(Name = "compare")]
+#else
         [XmlElement(ElementName = "compare")]
-        [DataMember]
+#endif
         public List<CompareFilter> Compares { get; set; }
 
         /// <summary>
