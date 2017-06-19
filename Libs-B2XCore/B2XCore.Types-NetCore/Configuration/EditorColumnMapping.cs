@@ -42,7 +42,11 @@ namespace B2XCore.Configuration
         /// <param name="value">The value.</param>
         public override void SetValue(object value)
         {
+#if NETCORE
+            throw new NotImplementedException();
+#else
             base.SetValue(value ?? string.Concat(Environment.UserName, '@', Environment.MachineName));
+#endif
         }
     }
 }

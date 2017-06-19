@@ -26,16 +26,14 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using B2XCore.Types;
 
-[assembly: AssemblyTitle("B2XCore Types")]
+//[assembly: AssemblyTitle("B2XCore Types")]
 [assembly: AssemblyDescription("Core types")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct(Product.Name)]
+//[assembly: AssemblyProduct(Product.Name)]
 [assembly: AssemblyCopyright(Product.Copyright)]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion(Product.Version)]
-[assembly: AssemblyFileVersion(Product.FileVersion)]
+//[assembly: AssemblyVersion(Product.Version)]
+//[assembly: AssemblyFileVersion(Product.FileVersion)]
 [assembly: AssemblyDelaySign(false)]
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(true)]

@@ -47,7 +47,11 @@ namespace B2XCore.Configuration
         /// </summary>
         public ImportMapping()
         {
+#if NETCORE
+            EncodingString = Encoding.UTF8.EncodingName;
+#else
             EncodingString = Encoding.UTF8.BodyName;
+#endif
             MinLineLengthString = "1";
             FieldQualifierString = "\"";
             FieldSeparatorString = "\t";
