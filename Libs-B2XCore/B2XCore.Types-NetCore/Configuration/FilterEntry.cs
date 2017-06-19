@@ -36,11 +36,11 @@ namespace B2XCore.Configuration
     ///
     /// </summary>
     [Serializable]
-    [TypeConverter(typeof(PropertySorter))]
 #if !NETCORE
+    [TypeConverter(typeof(PropertySorter))]
     [DefaultProperty("Column")]
 #endif
-    [DataContract(Namespace = Constants.CoreTypeNamespace)]
+	[DataContract(Namespace = Constants.CoreTypeNamespace)]
     public sealed class FilterEntry
     {
         private Type _entryType;

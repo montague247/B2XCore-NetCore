@@ -50,5 +50,6 @@
     <Compile Remove="FilterSet.cs" />
     <Compile Remove="Configuration\ModifiedColumnMapping.cs" />
     <Compile Remove="Properties\Settings.Designer.cs" />
+    <Compile Remove="PropertySorter.cs" />
   </ItemGroup>
 </Project>

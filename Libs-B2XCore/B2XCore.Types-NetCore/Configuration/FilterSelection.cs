@@ -36,12 +36,12 @@ namespace B2XCore.Configuration
     ///
     /// </summary>
     [Serializable]
-    [TypeConverter(typeof(PropertySorter))]
 #if !NETCORE
+    [TypeConverter(typeof(PropertySorter))]
     [DefaultProperty("Entries")]
     //[XmlRoot(ElementName = "filter", IsNullable = false)]
 #endif
-    public sealed class FilterSelection
+	public sealed class FilterSelection
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FilterSelection"/> class.

@@ -23,15 +23,23 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
+#if NETCORE
+using System.Runtime.Serialization;
+#else
 using System.Xml.Serialization;
+#endif
+using System.Text;
 
 namespace B2XCore.Configuration
 {
     /// <summary>
     ///
     /// </summary>
+#if NETCORE
+    [DataContract(Name = "importMapping", Namespace = Constants.CoreTypeNamespace)]
+#else
     [XmlRoot(ElementName = "importMapping", IsNullable = false, Namespace = Constants.CoreTypeNamespace)]
+#endif
     public sealed class ImportMapping
     {
         /// <summary>
@@ -63,7 +71,11 @@ namespace B2XCore.Configuration
         /// <value>
         /// The encoding.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "encoding")]
+#else
         [XmlAttribute(AttributeName = "encoding")]
+#endif
         public string EncodingString { get; set; }
 
         /// <summary>
@@ -72,7 +84,11 @@ namespace B2XCore.Configuration
         /// <value>
         /// The position.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "position")]
+#else
         [XmlAttribute(AttributeName = "position")]
+#endif
         public string PositionString { get; set; }
 
         /// <summary>
@@ -81,17 +97,29 @@ namespace B2XCore.Configuration
         /// <value>
         /// The line delimiter.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "lineDelimter")]
+#else
         [XmlAttribute(AttributeName = "lineDelimiter")]
+#endif
         public string LineDelimiter { get; set; }
 
         /// <summary>Gets or sets the first line starts with.</summary>
         /// <value>The first line starts with.</value>
+#if NETCORE
+        [DataMember(Name = "firstLineStartsWith")]
+#else
         [XmlAttribute(AttributeName = "firstLineStartsWith")]
+#endif
         public string FirstLineStartsWith { get; set; }
 
         /// <summary>Gets or sets the has columns header.</summary>
         /// <value>The has columns header.</value>
+#if NETCORE
+        [DataMember(Name = "hasColumnsHeader")]
+#else
         [XmlAttribute(AttributeName = "hasColumnsHeader")]
+#endif
         public string HasColumnsHeader { get; set; }
 
         /// <summary>
@@ -100,7 +128,11 @@ namespace B2XCore.Configuration
         /// <value>
         /// The minimum length of the line.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "minLineLength")]
+#else
         [XmlAttribute(AttributeName = "minLineLength")]
+#endif
         public string MinLineLengthString { get; set; }
 
         /// <summary>
@@ -109,7 +141,11 @@ namespace B2XCore.Configuration
         /// <value>
         /// The table.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "table")]
+#else
         [XmlAttribute(AttributeName = "table")]
+#endif
         public string Table { get; set; }
 
         /// <summary>
@@ -118,7 +154,11 @@ namespace B2XCore.Configuration
         /// <value>
         /// The field qualifier.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "fieldQualifier")]
+#else
         [XmlAttribute(AttributeName = "fieldQualifier")]
+#endif
         public string FieldQualifierString { get; set; }
 
         /// <summary>
@@ -127,7 +167,11 @@ namespace B2XCore.Configuration
         /// <value>
         /// The field separator.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "fieldSeparator")]
+#else
         [XmlAttribute(AttributeName = "fieldSeparator")]
+#endif
         public string FieldSeparatorString { get; set; }
 
         /// <summary>
@@ -136,7 +180,11 @@ namespace B2XCore.Configuration
         /// <value>
         /// The columns.
         /// </value>
+#if NETCORE
+        [DataMember(Name = "column")]
+#else
         [XmlElement(ElementName = "column")]
+#endif
         public List<ColumnMapping> Columns { get; set; }
 
         /// <summary>Gets the column.</summary>

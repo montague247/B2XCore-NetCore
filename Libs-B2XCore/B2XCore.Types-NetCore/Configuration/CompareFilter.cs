@@ -36,11 +36,11 @@ namespace B2XCore.Configuration
     ///
     /// </summary>
     [Serializable]
-    [TypeConverter(typeof(PropertySorter))]
 #if !NETCORE
+    [TypeConverter(typeof(PropertySorter))]
     [DefaultProperty("CompareType")]
 #endif
-    public sealed class CompareFilter
+	public sealed class CompareFilter
     {
         /// <summary>Gets or sets the key.</summary>
         /// <value>The key.</value>

@@ -33,12 +33,12 @@ namespace B2XCore.Configuration
     ///
     /// </summary>
     [Serializable]
-    [TypeConverter(typeof(PropertySorter))]
 #if !NETCORE
+    [TypeConverter(typeof(PropertySorter))]
     [DefaultProperty("CombineType")]
     [XmlRoot(ElementName = "filter", IsNullable = false)]
 #endif
-    [DataContract(Name = "filter", Namespace = Constants.CoreTypeNamespace)]
+	[DataContract(Name = "filter", Namespace = Constants.CoreTypeNamespace)]
     public sealed class CombineFilter
     {
         /// <summary>

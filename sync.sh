@@ -7,3 +7,6 @@ rsync -uhcrvz --progress --stats $SOURCEPATH $TARGETPATH
 rsync -uhcrvz --progress --stats $TARGETPATH $SOURCEPATH
 
 echo End syncing
+
+svn commit -m "synced" ../B2XCore/
+
